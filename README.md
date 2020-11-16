@@ -74,7 +74,7 @@ ORDER BY emp_no ASC;
 
 This gives us a list of employees who will look to retire in the next 10 years resulting in: 
 
-![Employees Eligible for Mentorship Program](/images/mentorship_eligbiligy.png)
+![Employees Eligible for Mentorship Program](/images/mentorship_eligibility.png)
 
 
 # SUMMARY 
