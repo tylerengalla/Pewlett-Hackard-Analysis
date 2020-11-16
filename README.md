@@ -43,6 +43,8 @@ FROM retirement_titles
 ORDER BY emp_no ASC;
 ```
 
+---
+
 - Then to give us an idea of the amount of postions that will need to be filled  we group them by their title and use COUNT function. 
 
 ```sql
@@ -59,8 +61,9 @@ ORDER BY COUNT(ut.title) DESC;
 
 -  We have very little Managers that will be retiring in the next wave. 
 
+---
 
-- Next we need a list of employees who are eligbile to particpate in our mentoship program. So we use query: 
+Next we need a list of employees who are eligbile to particpate in our mentoship program. So we use query: 
 
 ```sql
 SELECT DISTINCT ON (emp_no)
@@ -81,7 +84,7 @@ WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31') AND ti.to_date = '999
 ORDER BY emp_no ASC;
 ```
 
-- This gives us a list of employees who will look to retire in the next 10 years resulting in: 
+This gives us a list of employees who will look to retire in the next 10 years resulting in: 
 
 ![Employees Eligible for Mentorship Program](/images/mentorship_eligibility.png)
 
