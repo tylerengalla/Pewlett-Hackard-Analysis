@@ -8,7 +8,7 @@ We've been asked to determine the number of retiring employees per title, and id
 
 - We filtered our employees by birth date to identify who is a part of the upcoming "silver tsunami" or retirement wave. The query we used to achieve this is: 
 
-'''
+```sql  
 SELECT 
 	e.emp_no,
 	e.first_name,
@@ -22,7 +22,7 @@ LEFT JOIN titles as ti
 	ON (e.emp_no = ti.emp_no)
 WHERE (e.birth_date BETWEEN '1952-01-01' AND '1955-12-31')
 ORDER BY emp_no ASC, to_date DESC; 
-'''
+```
 
 - This gave us a list of employees that will be retiring.
 
@@ -32,7 +32,7 @@ ORDER BY emp_no ASC, to_date DESC;
 
 - In order to achieve this we need another query: 
 
-'''
+```sql
 SELECT DISTINCT ON (emp_no)
 	emp_no,
 	first_name,
@@ -41,17 +41,17 @@ SELECT DISTINCT ON (emp_no)
 INTO unique_titles
 FROM retirement_titles 
 ORDER BY emp_no ASC;
-'''
+```
 
 - Then to give us an idea of the amount of postions that will need to be filled  we group them by their title and use COUNT function. 
 
-'''
+```sql
 SELECT COUNT(ut.title), ut.title
 INTO retiring_titles
 FROM unique_titles as ut
 GROUP BY ut.title
 ORDER BY COUNT(ut.title) DESC;
-'''
+```
 
 ![Overview of Titles Set to Retire](/images/retiring_titles.png)
 
@@ -62,6 +62,7 @@ ORDER BY COUNT(ut.title) DESC;
 
 - Next we need a list of employees who are eligbile to particpate in our mentoship program. So we use query: 
 
+```sql
 SELECT DISTINCT ON (emp_no)
 	e.emp_no,
 	e.first_name,
@@ -78,6 +79,7 @@ JOIN titles as ti
 	ON (e.emp_no = ti.emp_no)
 WHERE (e.birth_date BETWEEN '1965-01-01' AND '1965-12-31') AND ti.to_date = '9999-01-01'
 ORDER BY emp_no ASC;
+```
 
 - This gives us a list of employees who will look to retire in the next 10 years resulting in: 
 
