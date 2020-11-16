@@ -79,8 +79,6 @@ This gives us a list of employees who will look to retire in the next 10 years r
 
 # SUMMARY 
 
-- How many roles will need to be filled as the "silver tsunami" begins to make an impact?
-90,398 roles will need to be filled 
+- 90,398 roles will need to be filled as a result of the "silver tsunami" that is approaching. 
 
-- Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
 
