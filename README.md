@@ -23,7 +23,7 @@ ORDER BY emp_no ASC, to_date DESC;
 
 This gave us a list of employees that will be retiring.
 
--- retirement_titles.png 
+![Retiring Employees][/images/retirement_titles.png]
 
 The problem here is that our query gave us each title an employee held during their tenure, so if they were promoted, now we have employee duplicates. We just want their most recent title they're holding so we can understand what roles will be set to retire. 
 
@@ -46,7 +46,7 @@ FROM unique_titles as ut
 GROUP BY ut.title
 ORDER BY COUNT(ut.title) DESC;
 
--- retiring_titles.png 
+![Overview of Titles Set to Retire][/images/retiring_titles.png]
 
 - We can see that Senior Engineers and Senior Staff will be our biggest vacancy of roles that will be needed to filled. 
 
@@ -74,7 +74,7 @@ ORDER BY emp_no ASC;
 
 This gives us a list of employees who will look to retire in the next 10 years resulting in: 
 
--- mentorship_eligbiligy.png 
+![Employees Eligible for Mentorship Program][/images/mentorship_eligbiligy.png]
 
 
 # SUMMARY 
